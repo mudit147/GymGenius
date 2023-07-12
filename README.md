@@ -1,5 +1,12 @@
 # GymGenius
+
 Gym Genius README file.
+
+## Commands
+
+`npm run lint`<br />
+`npm run lint:css`<br />
+`npm run format`<br />
 
 ## Git
 
