@@ -1,0 +1,41 @@
+{
+  "name": "gymgenius",
+  "version": "1.0.0",
+  "description": "Gym Genius README file.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --fix",
+    "lint:css": "stylelint \"**/*.css\" --fix",
+    "format": "prettier --write ."
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.44.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^13.2.3",
+    "prettier": "^3.0.0",
+    "stylelint": "^15.10.1",
+    "stylelint-config-standard": "^34.0.0",
+    "next": "13.4.8"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "npm run lint",
+      "npm run format"
+    ],
+    "*.{css,scss}": [
+      "npm run lint:css",
+      "npm run format"
+    ],
+    "*.{json,md}": [
+      "npm run format"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
