@@ -33,8 +33,6 @@ export default function Login() {
         },
       });
 
-      console.log(res)
-
       // If successful, update our user state with their metadata and route to the dashboard
       if (res.ok) {
         const userMetadata = await magic.user.getMetadata();

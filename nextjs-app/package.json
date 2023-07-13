@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint --fix",
+    "lint:css": "stylelint \"**/*.css\" --fix",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@next-auth/prisma-adapter": "^1.0.7",
@@ -32,6 +34,29 @@
     "tailwindcss": "3.3.2",
     "typescript": "5.1.6",
     "@types/bcrypt": "^5.0.0",
-    "prisma": "^5.0.0"
+    "prisma": "^5.0.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^13.2.3",
+    "prettier": "^3.0.0",
+    "stylelint": "^15.10.1",
+    "stylelint-config-standard": "^34.0.0"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "npm run lint",
+      "npm run format"
+    ],
+    "*.{css,scss}": [
+      "npm run lint:css",
+      "npm run format"
+    ],
+    "*.{json,md}": [
+      "npm run format"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
