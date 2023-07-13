@@ -1,10 +1,11 @@
 import '@/styles/globals.css';
+import { AppProps } from 'next/app';
 import { useState, useEffect } from 'react';
 import { UserContext } from '@/lib/UserContext';
 import { useRouter } from 'next/router';
 import { magic } from '@/lib/magic';
 
-export default function App({ Component, pageProps }) {
+export default function App({ Component, pageProps }: AppProps) {
   const [user, setUser] = useState();
   // Create our router
   const router = useRouter();
@@ -12,14 +13,12 @@ export default function App({ Component, pageProps }) {
   useEffect(() => {
     // Set loading to true to display our loading message within pages/index.js
     setUser({ loading: true });
-    // Check if the user is authenticated already
-    magic.user.isLoggedIn().then((isLoggedIn) => {
+
+    magic.user.isLoggedIn().then((isLoggedIn: boolean) => {
       if (isLoggedIn) {
-        // Pull their metadata, update our state, and route to dashboard
         magic.user.getMetadata().then((userData) => setUser(userData));
         router.push('/dashboard');
       } else {
-        // If false, route them to the login page and reset the user state
         router.push('/login');
         setUser({ user: null });
       }
