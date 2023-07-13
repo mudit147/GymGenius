@@ -5,11 +5,9 @@ import { useRouter } from 'next/router';
 
 export default function Dashboard() {
   const [user, setUser] = useContext(UserContext);
-  // Create our router
   const router = useRouter();
 
   const logout = () => {
-    // Call Magic's logout method, reset the user state, and route to the login page
     magic.user.logout().then(() => {
       setUser({ user: null });
       router.push('/login');
@@ -18,6 +16,7 @@ export default function Dashboard() {
 
   return (
     <>
+      <div>{user?.loading && <p>Loading...</p>}</div>
       {user?.issuer && (
         <>
           <h1>Dashboard</h1>
