@@ -1,8 +1,13 @@
-import { useContext } from 'react';
-import { UserContext } from '@/lib/UserContext';
+import Link from 'next/link';
+import { ROUTES } from '@/pages/pages.const';
 
 export default function Home() {
-  const [user] = useContext(UserContext);
-
-  return <div>{user?.loading && <p>Loading...</p>}</div>;
+  return (
+    <>
+      <h1>Home</h1>
+      <Link href={ROUTES.LOGIN}>Go to Login</Link>
+      <br />
+      <Link href={ROUTES.ABOUT}>Go to About</Link>
+    </>
+  );
 }

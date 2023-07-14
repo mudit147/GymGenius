@@ -16,13 +16,17 @@ export default function App({ Component, pageProps }: AppProps) {
     magic.user.isLoggedIn().then((isLoggedIn: boolean) => {
       if (isLoggedIn) {
         magic.user.getMetadata().then((userData) => setUser(userData));
-        router.push(ROUTES.DASHBOARD.INDEX);
+        router.push(ROUTES.APP.INDEX);
       } else {
-        router.push(ROUTES.LOGIN.INDEX);
-        setUser({ user: null });
+        setUser({ loading: false });
+        router.push(ROUTES.LOGIN);
       }
     });
   }, []);
+
+  if (!user || user?.loading) {
+    return <p>Loading...</p>;
+  }
 
   return (
     <UserContext.Provider value={[user, setUser]}>
