@@ -16,7 +16,7 @@ export default function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const didToken = await magic.auth.loginWithMagicLink({
+      const token = await magic.auth.loginWithMagicLink({
         email,
       });
 
@@ -24,7 +24,7 @@ export default function Login() {
         method: 'POST',
         headers: {
           'Content-type': 'application/json',
-          Authorization: `Bearer ${didToken}`,
+          Authorization: `Bearer ${token}`,
         },
       });
 
