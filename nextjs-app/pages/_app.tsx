@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { UserContext } from '@/lib/UserContext';
 import { useRouter } from 'next/router';
 import { magic } from '@/lib/magic';
+import { ROUTES } from './pages.const';
 
 export default function App({ Component, pageProps }: AppProps) {
   const [user, setUser] = useState();
@@ -15,9 +16,9 @@ export default function App({ Component, pageProps }: AppProps) {
     magic.user.isLoggedIn().then((isLoggedIn: boolean) => {
       if (isLoggedIn) {
         magic.user.getMetadata().then((userData) => setUser(userData));
-        router.push('/dashboard');
+        router.push(ROUTES.DASHBOARD.INDEX);
       } else {
-        router.push('/login');
+        router.push(ROUTES.LOGIN.INDEX);
         setUser({ user: null });
       }
     });

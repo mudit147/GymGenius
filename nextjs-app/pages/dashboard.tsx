@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { UserContext } from '@/lib/UserContext';
 import { magic } from '@/lib/magic';
 import { useRouter } from 'next/router';
+import { ROUTES } from './pages.const';
 
 export default function Dashboard() {
   const [user, setUser] = useContext(UserContext);
@@ -10,7 +11,7 @@ export default function Dashboard() {
   const logout = () => {
     magic.user.logout().then(() => {
       setUser({ user: null });
-      router.push('/login');
+      router.push(ROUTES.LOGIN.INDEX);
     });
   };
 

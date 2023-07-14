@@ -2,6 +2,7 @@ import { useContext, useState, useEffect } from 'react';
 import { UserContext } from '@/lib/UserContext';
 import { useRouter } from 'next/router';
 import { magic } from '@/lib/magic';
+import { ROUTES } from './pages.const';
 
 export default function Login() {
   const [user, setUser] = useContext(UserContext);
@@ -9,7 +10,7 @@ export default function Login() {
   const router = useRouter();
 
   useEffect(() => {
-    user?.issuer && router.push('/dashboard');
+    user?.issuer && router.push(ROUTES.DASHBOARD.INDEX);
   }, [user]);
 
   const handleLogin = async (e) => {
@@ -30,7 +31,7 @@ export default function Login() {
       if (res.ok) {
         const userMetadata = await magic.user.getMetadata();
         setUser(userMetadata);
-        router.push('/dashboard');
+        router.push(ROUTES.DASHBOARD.INDEX);
       }
     } catch (error) {
       console.error(error);
