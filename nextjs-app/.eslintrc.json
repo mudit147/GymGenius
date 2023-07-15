@@ -10,7 +10,7 @@
     "linebreak-style": ["error", "unix"],
     "quotes": ["error", "single"],
     "semi": ["error", "always"],
-    "comma-dangle": ["error", "never"],
+    "comma-dangle": [2, "always-multiline"],
     "no-multiple-empty-lines": ["error", { "max": 1 }],
     "no-var": "error",
     "prefer-const": "error",
