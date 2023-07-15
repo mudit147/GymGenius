@@ -6,7 +6,7 @@ Gym Genius README file.
 
 `npm run lint`<br />
 `npm run lint:css`<br />
-`npm run format`<br />
+`npm run format`
 
 ## Git
 
@@ -14,12 +14,12 @@ Gym Genius README file.
 
 <b>Type:</b> Describes the purpose or category of the commit. It can be one of the following:
 
-`feat:` A new feature or enhancement.
-`fix:` A bug fix.
-`docs:` Documentation-related changes.
-`style:` Code style/formatting changes (e.g., whitespace, formatting).
-`refactor:` Code changes that neither fix a bug nor add a feature.
-`test:` Adding or modifying tests.
+`feat:` A new feature or enhancement.<br />
+`fix:` A bug fix.<br />
+`docs:` Documentation-related changes.<br />
+`style:` Code style/formatting changes (e.g., whitespace, formatting).<br />
+`refactor:` Code changes that neither fix a bug nor add a feature.<br />
+`test:` Adding or modifying tests.<br />
 `chore:` Other changes that do not modify code (e.g., build scripts, configuration files).
 
 <b>Scope (optional):</b> Indicates the specific component, module, or area of the codebase that the commit affects. It helps provide additional context. Not all commits require a scope.
@@ -37,7 +37,7 @@ Here are a few examples of commit messages using this notation:
 `docs(readme): Update installation instructions`<br />
 `style(components): Format code according to style guidelines`<br />
 `test(api): Add unit tests for user service`<br />
-`chore(build): Update dependencies and build scripts`<br />
+`chore(build): Update dependencies and build scripts`
 
 ### Push Notation
 
