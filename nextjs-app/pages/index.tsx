@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import { ROUTES } from '@/pages/pages.const';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -8,6 +8,8 @@ export default function Home() {
       <Link href={ROUTES.LOGIN}>Go to Login</Link>
       <br />
       <Link href={ROUTES.ABOUT}>Go to About</Link>
+      <br />
+      <Link href={ROUTES.REGISTRATION}>Register me</Link>
     </>
   );
 }
