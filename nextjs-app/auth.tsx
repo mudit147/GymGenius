@@ -1,26 +1,23 @@
 import { magic } from '@/lib/magic';
+import { User } from '@/lib/user.model';
+
+type Error = {
+  message: string;
+};
 
 export class Auth {
-  user: any;
-
-  error: { message: string } | null;
-
-  cb: any;
-
-  constructor() {
-    this.user = null;
-    this.error = null;
-  }
+  user?: User;
+  error?: Error;
+  cb?: any = undefined;
 
   onAuthStateChanged(cb: any) {
     this.cb = cb;
-
     return () => {
-      this.cb = null;
+      this.cb = undefined;
     };
   }
 
-  protected onUserChange(user: any | null, error?: { message: string }) {
+  protected onUserChange(user?: User, error?: { message: string }) {
     this.cb && this.cb(user, error);
   }
 
@@ -40,15 +37,14 @@ export class Auth {
           });
 
           if (res.ok) {
-            const userMetadata = await magic.user.getMetadata();
-            this.user = userMetadata;
-
+            const userMetadata = await magic.user.getInfo();
+            this.user = userMetadata as any;
             this.onUserChange(this.user);
           }
           resolve(this.user);
         } catch (error) {
           this.error = { message: 'Wrong email or password' };
-          this.onUserChange(null, this.error);
+          this.onUserChange(undefined, this.error);
           reject(error);
         }
 
@@ -58,8 +54,8 @@ export class Auth {
   }
 
   logout() {
-    this.user = null;
-    this.onUserChange(this.user);
+    this.user = undefined;
+    this.onUserChange(undefined);
   }
 
   resolveUser(timeout: number) {
@@ -67,10 +63,10 @@ export class Auth {
       if (window) {
         const signedInUser = await magic.user.isLoggedIn();
         if (signedInUser) {
-          this.user = await magic.user.getMetadata();
+          this.user = (await magic.user.getInfo()) as any;
         }
       } else {
-        this.user = null;
+        this.user = undefined;
       }
       this.onUserChange(this.user);
     }, timeout);

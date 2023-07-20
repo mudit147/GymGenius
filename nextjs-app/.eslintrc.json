@@ -15,7 +15,6 @@
     "no-var": "error",
     "prefer-const": "error",
     "object-curly-spacing": ["error", "always"],
-    "array-bracket-spacing": ["error", "always"],
     "arrow-spacing": "error",
     "prettier/prettier": "error",
     "no-use-before-define": ["error", { "functions": false }]
