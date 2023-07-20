@@ -1,5 +1,5 @@
 import { useAuth } from '@/components/AuthProvider';
-import { ROUTES } from '@/pages/pages.const';
+import { ROUTES } from '@/pages/routes.const';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 
