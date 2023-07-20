@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { ROUTES } from '@/pages/routes.const';
 import Link from 'next/link';
-import { useAuth } from '@/components/AuthProvider';
+import { useApp } from '@/components/AppProvider';
 
 export default function Login() {
-  const { auth, user } = useAuth();
+  const { auth, user } = useApp();
   const [email, setEmail] = useState('');
   const router = useRouter();
 

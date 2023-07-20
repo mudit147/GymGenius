@@ -1,10 +1,10 @@
 import { magic } from '@/lib/magic';
 import { useRouter } from 'next/router';
 import { ROUTES } from '@/pages/routes.const';
-import { useAuth } from '@/components/AuthProvider';
+import { useApp } from '@/components/AppProvider';
 
 export default function Dashboard() {
-  const { auth, user } = useAuth();
+  const { auth, user } = useApp();
   const router = useRouter();
 
   const logout = async () => {

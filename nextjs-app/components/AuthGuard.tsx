@@ -1,10 +1,10 @@
-import { useAuth } from '@/components/AuthProvider';
+import { useApp } from '@/components/AppProvider';
 import { ROUTES } from '@/pages/routes.const';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 
 export function AuthGuard({ children }: { children: JSX.Element }) {
-  const { user, initializing } = useAuth();
+  const { user, initializing } = useApp();
   const router = useRouter();
 
   useEffect(() => {
@@ -25,5 +25,5 @@ export function AuthGuard({ children }: { children: JSX.Element }) {
     return <>{children}</>;
   }
 
-  return null;
+  return undefined;
 }
