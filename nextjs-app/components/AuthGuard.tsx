@@ -25,5 +25,5 @@ export function AuthGuard({ children }: { children: JSX.Element }) {
     return <>{children}</>;
   }
 
-  return null;
+  return undefined;
 }

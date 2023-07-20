@@ -38,7 +38,7 @@ export class Auth {
 
           if (res.ok) {
             const userMetadata = await magic.user.getInfo();
-            this.user = userMetadata as User;
+            this.user = userMetadata as any;
             this.onUserChange(this.user);
           }
           resolve(this.user);
@@ -63,7 +63,7 @@ export class Auth {
       if (window) {
         const signedInUser = await magic.user.isLoggedIn();
         if (signedInUser) {
-          this.user = (await magic.user.getInfo()) as User;
+          this.user = (await magic.user.getInfo()) as any;
         }
       } else {
         this.user = undefined;
