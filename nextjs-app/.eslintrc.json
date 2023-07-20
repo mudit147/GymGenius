@@ -1,5 +1,5 @@
 {
-  "extends": "next/core-web-vitals",
+  "extends": ["next/core-web-vitals", "prettier", "react-app"],
   "rules": {
     "no-unused-vars": "error",
     "no-console": "warn",
@@ -16,8 +16,10 @@
     "prefer-const": "error",
     "object-curly-spacing": ["error", "always"],
     "arrow-spacing": "error",
+    "prettier/prettier": "error",
     "no-use-before-define": ["error", { "functions": false }]
   },
+  "plugins": ["prettier"],
   "globals": {
     "JSX": true,
     "React": true
