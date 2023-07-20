@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { ROUTES } from '@/pages/pages.const';
+import { ROUTES } from '@/pages/routes.const';
 import Link from 'next/link';
 import { useAuth } from '@/components/AuthProvider';
 

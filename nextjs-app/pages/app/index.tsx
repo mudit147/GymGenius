@@ -1,6 +1,6 @@
 import { magic } from '@/lib/magic';
 import { useRouter } from 'next/router';
-import { ROUTES } from '@/pages/pages.const';
+import { ROUTES } from '@/pages/routes.const';
 import { useAuth } from '@/components/AuthProvider';
 
 export default function Dashboard() {

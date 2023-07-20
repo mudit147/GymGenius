@@ -1,4 +1,4 @@
-import { ROUTES } from '@/pages/pages.const';
+import { ROUTES } from '@/pages/routes.const';
 import Link from 'next/link';
 
 export default function Home() {
