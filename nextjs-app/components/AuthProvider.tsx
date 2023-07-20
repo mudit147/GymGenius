@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Auth } from '@/auth';
+import { User } from '@/lib/user.model';
 
 const auth = new Auth();
 
 export const AuthContext = React.createContext<
   | {
-      auth: Auth;
       initializing: boolean;
-      user: any;
+      auth: Auth;
+      user: User;
       error: { message: string };
     }
   | undefined
@@ -31,7 +32,7 @@ export function AuthProvider({ children }: { children: JSX.Element }) {
   const [initializing, setInitializing] = useState(true);
 
   useEffect(() => {
-    auth.resolveUser(2000).onAuthStateChanged((user: any, error: any) => {
+    auth.resolveUser(2000).onAuthStateChanged((user: User, error: Error) => {
       if (user) {
         setUser(user);
         setError(null);
@@ -46,10 +47,10 @@ export function AuthProvider({ children }: { children: JSX.Element }) {
   }, []);
 
   const value = {
+    initializing,
     user,
     error,
     auth,
-    initializing,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

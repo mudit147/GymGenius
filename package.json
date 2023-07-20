@@ -6,7 +6,7 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "lint": "eslint --fix",
+    "lint": "eslint --fix .",
     "lint:css": "stylelint \"**/*.css\" --fix",
     "format": "prettier --write ."
   },
