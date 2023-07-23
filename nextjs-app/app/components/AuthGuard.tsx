@@ -1,4 +1,5 @@
-import { useApp } from '@/components/AppProvider';
+'use client';
+import { useApp } from '@/app/components/AppProvider';
 import { ROUTES } from '@/pages/routes.const';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';

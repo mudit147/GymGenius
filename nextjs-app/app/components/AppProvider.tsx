@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+'use client';
 import { Auth } from '@/auth';
-import { User } from '@/lib/user.model';
-import { AppContextModel } from '@/lib/app.model';
+import React, { useEffect, useState } from 'react';
+import { AppContextModel } from '../lib/app.model';
+import { User } from '../lib/user.model';
 
 const auth = new Auth();
 

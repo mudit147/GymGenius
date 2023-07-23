@@ -2,7 +2,7 @@ import FormWrapper from './FormWrapper';
 
 type UserInfoData = {
   firstName: string;
-  lastName: string;
+  lastName?: string;
   dob: string;
   gender: string;
 };
@@ -31,7 +31,6 @@ const UserInfoForm = ({
       />
       <label>Last Name </label>
       <input
-        required
         type="text"
         name="Last Name"
         value={lastName}
