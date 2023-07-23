@@ -1,36 +1,46 @@
-//create a react component to render the registration form
-// age: ask for DOB, have a calender
-//   gender , options to chose from
-//   weight, a slidebar for wight, give option for lbs or kg
-//   height , same as weight, optioon for cms or feet inches
-//   bodyFatPercentage , input to type
-//   fitnessGoals: option to choose from: fat loss, muscle gain, both
-//   preferences : options multiple choose- home workout, full gym, mix, calestanics, dumbles only, barbell only, full equipment, machines only, no machine
-// injuries: input to type injuries
+'use client';
 
-import FitnessGoalsForm from '@/components/Registration/FitnessGoalsForm';
-import InjusriesForm from '@/components/Registration/InjuriesForm';
-import PhysicalInfoForm from '@/components/Registration/PhysicalInfoForm';
-import SignUpForm from '@/components/Registration/SignUpForm';
-import UserInfoForm from '@/components/Registration/UserInfoForm';
-import WorkoutPreferenceForm from '@/components/Registration/WorkoutPreferencesForm';
-import useMultistepForm from '@/utils/useMultistepForm';
+import InjuriesForm from '@/app//components/Registration/InjuriesForm';
+import PhysicalInfoForm from '@/app//components/Registration/PhysicalInfoForm';
+import SignUpForm from '@/app//components/Registration/SignUpForm';
+import UserInfoForm from '@/app//components/Registration/UserInfoForm';
+import WorkoutPreferenceForm from '@/app//components/Registration/WorkoutPreferencesForm';
+import FitnessGoalsForm from '@/app/components/Registration/FitnessGoalsForm';
+import useMultistepForm from '@/app/hooks/useMultistepForm';
+import axios from 'axios';
 import { FormEvent, useState } from 'react';
+
+// type FormData = {
+//   firstName: string;
+//   lastName: string;
+//   dob: string;
+//   gender: string;
+//   weight: string;
+//   weightUnit: string;
+//   height: string;
+//   heightUnit: string;
+//   bodyFatPercentage: string;
+//   fitnessGoals: string[];
+//   preferences: string[];
+//   injuries: string;
+//   email: string;
+// };
 
 type FormData = {
   firstName: string;
-  lastName: string;
+  lastName?: string;
+  email: string;
   dob: string;
+  age?: string;
   gender: string;
-  weight: string;
-  weightUnit: string;
+  weight: String;
+  weightUnit?: string;
   height: string;
-  heightUnit: string;
-  bodyFatPercentage: string;
+  heightUnit?: string;
+  bodyFatPercentage?: string;
+  injuries?: string;
   fitnessGoals: string[];
   preferences: string[];
-  injuries: string;
-  email: string;
 };
 
 const INITIAL_DATA: FormData = {
@@ -62,16 +72,17 @@ const Registration = () => {
       <PhysicalInfoForm {...data} updateFields={updateFields} />,
       <FitnessGoalsForm {...data} updateFields={updateFields} />,
       <WorkoutPreferenceForm {...data} updateFields={updateFields} />,
-      <InjusriesForm {...data} updateFields={updateFields} />,
+      <InjuriesForm {...data} updateFields={updateFields} />,
       <SignUpForm {...data} updateFields={updateFields} />,
     ]);
 
-  const onsubmit = (e: FormEvent) => {
+  const onsubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!isLastStep) {
       return next();
     }
-    alert('Submit');
+
+    axios.post('/api/register', data).catch((err) => console.log(err));
   };
   return (
     <div

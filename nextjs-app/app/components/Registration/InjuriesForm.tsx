@@ -2,7 +2,7 @@ import { useState } from 'react';
 import FormWrapper from './FormWrapper';
 
 type InjuriesFormData = {
-  injuries: string;
+  injuries?: string;
 };
 
 type InjuriesFormProps = InjuriesFormData & {

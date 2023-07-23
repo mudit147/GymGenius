@@ -1,7 +1,7 @@
-import '@/styles/globals.css';
+import { AppProvider } from '@/app/components/AppProvider';
+import { AuthGuard } from '@/app/components/AuthGuard';
+import '@/app/globals.css';
 import { AppProps } from 'next/app';
-import { AppProvider } from '@/components/AppProvider';
-import { AuthGuard } from '@/components/AuthGuard';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (

@@ -1,8 +1,10 @@
-import { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
+'use client';
+
+import { useApp } from '@/app/components/AppProvider';
 import { ROUTES } from '@/pages/routes.const';
 import Link from 'next/link';
-import { useApp } from '@/components/AppProvider';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 
 export default function Login() {
   const { auth, user } = useApp();
