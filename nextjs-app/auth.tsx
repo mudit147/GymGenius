@@ -1,5 +1,5 @@
-import { magic } from '@/lib/magic';
-import { User } from '@/lib/user.model';
+import { magic } from '@/app/lib/magic';
+import { User } from '@/app/lib/user.model';
 
 type Error = {
   message: string;

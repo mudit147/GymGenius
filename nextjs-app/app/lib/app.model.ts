@@ -1,5 +1,5 @@
+import { User } from '@/app/lib/user.model';
 import { Auth } from '@/auth';
-import { User } from '@/lib/user.model';
 
 export interface AppContextModel {
   initializing: boolean;

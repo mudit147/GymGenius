@@ -1,11 +1,11 @@
 import FormWrapper from './FormWrapper';
 
 type PhysicalInfoFormData = {
-  weight: string;
-  weightUnit: string;
+  weight: String;
+  weightUnit?: string;
   height: string;
-  heightUnit: string;
-  bodyFatPercentage: string;
+  heightUnit?: string;
+  bodyFatPercentage?: string;
 };
 
 type PhysicalInfoFormProps = PhysicalInfoFormData & {
@@ -28,19 +28,18 @@ const PhysicalInfoForm = ({
         autoFocus
         type="number"
         name="weight"
-        value={weight}
+        value={weight.toString()}
         onChange={(e) => updateFields({ weight: e.target.value })}
       />
 
       <label>Weight Unit</label>
       <select
-        required
         name="weightUnit"
         value={weightUnit}
         onChange={(e) => updateFields({ weightUnit: e.target.value })}
       >
-        <option value="lbs">lbs</option>
         <option value="kg">kg</option>
+        <option value="lbs">lbs</option>
       </select>
 
       <label>Height</label>
@@ -54,18 +53,16 @@ const PhysicalInfoForm = ({
 
       <label>Height Unit</label>
       <select
-        required
         name="heightUnit"
         value={heightUnit}
         onChange={(e) => updateFields({ heightUnit: e.target.value })}
       >
-        <option value="ft">ft</option>
         <option value="cm">cm</option>
+        <option value="ft">ft</option>
       </select>
 
       <label>Body Fat Percentage</label>
       <input
-        required
         type="number"
         name="bodyFatPercentage"
         value={bodyFatPercentage}

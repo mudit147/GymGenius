@@ -1,3 +1,5 @@
+'use client';
+
 import { ROUTES } from '@/pages/routes.const';
 import Link from 'next/link';
 
