@@ -16,7 +16,7 @@ model User {
   lastName          String?
   email             String    @unique
   emailVerified     Boolean?   @default(false)
-  dob               DateTime
+  dob               String?
   age               String?
   gender            String
   weight            String
