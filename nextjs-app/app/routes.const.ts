@@ -1,6 +1,6 @@
 export const ROUTES = {
   ABOUT: '/about',
-  LOGIN: '/login',
+  LOGIN: '/sign-in',
   REGISTRATION: '/registration',
   APP: {
     INDEX: '/app',

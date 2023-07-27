@@ -1,30 +1,14 @@
 'use client';
 
-import InjuriesForm from '@/app//components/Registration/InjuriesForm';
-import PhysicalInfoForm from '@/app//components/Registration/PhysicalInfoForm';
-import SignUpForm from '@/app//components/Registration/SignUpForm';
-import UserInfoForm from '@/app//components/Registration/UserInfoForm';
-import WorkoutPreferenceForm from '@/app//components/Registration/WorkoutPreferencesForm';
-import FitnessGoalsForm from '@/app/components/Registration/FitnessGoalsForm';
 import useMultistepForm from '@/app/hooks/useMultistepForm';
+import FitnessGoalsForm from '@/components/Registration/FitnessGoalsForm';
+import InjuriesForm from '@/components/Registration/InjuriesForm';
+import PhysicalInfoForm from '@/components/Registration/PhysicalInfoForm';
+import SignUpForm from '@/components/Registration/SignUpForm';
+import UserInfoForm from '@/components/Registration/UserInfoForm';
+import WorkoutPreferenceForm from '@/components/Registration/WorkoutPreferencesForm';
 import axios from 'axios';
 import { FormEvent, useState } from 'react';
-
-// type FormData = {
-//   firstName: string;
-//   lastName: string;
-//   dob: string;
-//   gender: string;
-//   weight: string;
-//   weightUnit: string;
-//   height: string;
-//   heightUnit: string;
-//   bodyFatPercentage: string;
-//   fitnessGoals: string[];
-//   preferences: string[];
-//   injuries: string;
-//   email: string;
-// };
 
 type FormData = {
   firstName: string;
