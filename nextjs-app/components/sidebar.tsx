@@ -14,13 +14,13 @@ const montserrat = Montserrat({
 
 const routes = [
   {
-    lable: 'Dashboard',
+    label: 'Dashboard',
     icon: LayoutDashboard,
     href: '/dashboard',
     color: 'text-orange-500',
   },
   {
-    label: 'Progress Tracker',
+    label: 'Progress',
     icon: MessageSquare,
     href: '/progresstracker',
     color: 'text-pink-500',
@@ -32,7 +32,7 @@ const routes = [
     color: 'text-white-500',
   },
   {
-    lable: 'Settings',
+    label: 'Settings',
     icon: Settings,
     href: '/settings',
     color: 'text-slate-200',
@@ -41,10 +41,10 @@ const routes = [
 const Sidebar = () => {
   const pathname = usePathname();
   return (
-    <div className="space-y-4 py-4 flex flex-col h-full bg-slate-800 text-white">
-      <div className="px-3 py-2 flex-1">
+    <div className="space-y-4 py-4 flex flex-col h-full bg-neutral-900 text-white border-r border-gray-600">
+      <div className="px-3 py-2 flex-1 text-xl">
         <Link href="/dashboard" className="flex items-center pl-3 mb-14">
-          <div className="relative w-8 h-8 mr-4">
+          <div className="relative w-10 h-12 mr-4">
             <Image fill alt="Logo" src="/logo.png" />
           </div>
           <h1 className={cn('text-white font-bold', montserrat.className)}>
@@ -65,7 +65,7 @@ const Sidebar = () => {
             >
               <div className="flex items-center flex-1">
                 <route.icon className={cn('h-5 w-5 mr-3', route.color)} />
-                {route.lable}
+                {route.label}
               </div>
             </Link>
           ))}
