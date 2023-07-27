@@ -16,7 +16,7 @@ const userMultistepForm = (steps: ReactElement[]) => {
     setCurrentStepIdx(currentStepIdx - 1);
   };
 
-  const goToStep = (step: number) => {
+  const goTo = (step: number) => {
     setCurrentStepIdx(step);
   };
 
@@ -28,7 +28,7 @@ const userMultistepForm = (steps: ReactElement[]) => {
     step: steps[currentStepIdx],
     next,
     back,
-    goToStep,
+    goTo,
   };
 };
 
