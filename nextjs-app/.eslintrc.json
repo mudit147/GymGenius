@@ -1,5 +1,5 @@
 {
-  "extends": ["next/core-web-vitals", "prettier", "react-app"],
+  "extends": ["next/core-web-vitals", "prettier"],
   "rules": {
     "no-unused-vars": "error",
     "no-console": "warn",
@@ -11,13 +11,23 @@
     "quotes": ["error", "single"],
     "semi": ["error", "always"],
     "comma-dangle": [2, "always-multiline"],
-    "no-multiple-empty-lines": ["error", { "max": 1 }],
+    "no-multiple-empty-lines": [
+      "error",
+      {
+        "max": 1
+      }
+    ],
     "no-var": "error",
     "prefer-const": "error",
     "object-curly-spacing": ["error", "always"],
     "arrow-spacing": "error",
     "prettier/prettier": "error",
-    "no-use-before-define": ["error", { "functions": false }]
+    "no-use-before-define": [
+      "error",
+      {
+        "functions": false
+      }
+    ]
   },
   "plugins": ["prettier"],
   "globals": {
