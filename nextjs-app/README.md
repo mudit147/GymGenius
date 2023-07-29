@@ -20,5 +20,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Docs
 
-[Magic Auth Tutorial](https://vercel.com/guides/add-auth-to-nextjs-with-magic)
 [Auth Guard](https://dev.to/ivandotv/protecting-static-pages-in-next-js-application-1e50)
